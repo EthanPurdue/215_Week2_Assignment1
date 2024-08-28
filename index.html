@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    let numberOne = prompt("Enter the first number: ");
+    numberOne = parseInt(numberOne);
+    let method = prompt("What do you want to do? Input +, -, /, or x");
+    let numberTwo = prompt("Enter the second number: ");
+    numberTwo = parseInt(numberTwo);
+
+    //  isNaN means "not a number" so we are saying if both number1 and num2 are not equal to "not a number"
+    //  Check both inputs at the same time. Whole thing is one big if statement where if numbers aren't good
+    //       you are told that you must have valid ints
+    //  if numbers are good check if operator request is valid and if so do it but if not tell them
+    if (!isNaN(numberOne) & !isNaN(numberTwo)) {
+      switch (method) {
+        case "+":
+          result = numberOne + numberTwo;
+          break;
+
+        case "-":
+          result = numberOne - numberTwo;
+
+          break;
+
+        case "x":
+          result = numberOne * numberTwo;
+          break;
+
+        case "/":
+          result = numberOne / numberTwo;
+          break;
+
+        default:
+          alert(
+            "You did not enter a valid operator. Relaod the page and try again"
+          );
+          break;
+      }
+
+      // alert the result of what they put together after the loop
+      alert(`The result of ${numberOne} ${method} ${numberTwo} is ${result}`);
+    } else {
+      alert(
+        "You did not enter valid integers. Please reload the page and try again"
+      );
+    }
+  </script>
+</html>
